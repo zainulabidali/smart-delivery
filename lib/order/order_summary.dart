@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smart_delivery_app/tracking/tracking_page.dart';
 
 class OrderSummary extends StatelessWidget {
   final String orderId;
@@ -22,6 +23,18 @@ class OrderSummary extends StatelessWidget {
             Text("Status: ${order["status"]}"),
             const SizedBox(height: 20),
             const Text("Estimated Delivery: 30 mins"),
+            ElevatedButton(
+  onPressed: () {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) => TrackingPage(orderId: orderId),
+      ),
+    );
+  },
+  child: const Text("Track Delivery"),
+),
+
           ],
         ),
       ),

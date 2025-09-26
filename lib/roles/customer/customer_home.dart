@@ -3,7 +3,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:smart_delivery_app/order/order_page.dart';
 
 class CustomerHome extends StatelessWidget {
-  const CustomerHome({super.key});
+  final Function toggleTheme; // Save toggleTheme as class member
+
+  const CustomerHome({super.key, required this.toggleTheme});
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +20,13 @@ class CustomerHome extends StatelessWidget {
         title: const Text("Customer Dashboard"),
         actions: [
           IconButton(
-              onPressed: () => FirebaseAuth.instance.signOut(),
-              icon: const Icon(Icons.logout))
+            icon: const Icon(Icons.brightness_6),
+            onPressed: () => toggleTheme(), // Works now
+          ),
+          IconButton(
+            onPressed: () => FirebaseAuth.instance.signOut(),
+            icon: const Icon(Icons.logout),
+          ),
         ],
       ),
       body: ListView.builder(

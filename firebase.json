@@ -1,1 +1,38 @@
-{"flutter":{"platforms":{"android":{"default":{"projectId":"smart-delivery-b9bc2","appId":"1:213224893761:android:b144a372406654d44205c0","fileOutput":"android/app/google-services.json"}},"dart":{"lib/firebase_options.dart":{"projectId":"smart-delivery-b9bc2","configurations":{"android":"1:213224893761:android:b144a372406654d44205c0","web":"1:213224893761:web:d98e899043c1628f4205c0"}}}}}}
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "smart-delivery-b9bc2",
+          "appId": "1:213224893761:android:b144a372406654d44205c0",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "smart-delivery-b9bc2",
+          "configurations": {
+            "android": "1:213224893761:android:b144a372406654d44205c0",
+            "web": "1:213224893761:web:d98e899043c1628f4205c0"
+          }
+        }
+      }
+    }
+  },
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log",
+        "*.local"
+      ],
+      "predeploy": [
+        "npm --prefix \"$RESOURCE_DIR\" run lint"
+      ]
+    }
+  ]
+}
